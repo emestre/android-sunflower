@@ -37,10 +37,6 @@ import org.junit.Rule
 import org.junit.Test
 import org.junit.After
 import com.microsoft.appcenter.espresso.Factory
-import com.microsoft.appcenter.espresso.ReportHelper
-import android.R.attr.label
-
-
 
 class GardenActivityTest {
 

@@ -39,7 +39,6 @@ import org.junit.Test
 import org.junit.runner.RunWith
 import org.junit.After
 import com.microsoft.appcenter.espresso.Factory
-import com.microsoft.appcenter.espresso.ReportHelper
 
 @RunWith(AndroidJUnit4::class)
 class PlantDetailFragmentTest {
