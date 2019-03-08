@@ -37,13 +37,24 @@ import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
+import org.junit.After
+import com.microsoft.appcenter.espresso.Factory
+import com.microsoft.appcenter.espresso.ReportHelper
 
 @RunWith(AndroidJUnit4::class)
 class PlantDetailFragmentTest {
 
+    @Rule @JvmField
+    var reportHelper = Factory.getReportHelper()!!
+
     @Rule
     @JvmField
     val activityTestRule = ActivityTestRule(GardenActivity::class.java)
+
+    @After
+    fun tearDown() {
+        reportHelper.label("Stopping App")
+    }
 
     @Before
     fun jumpToPlantDetailFragment() {

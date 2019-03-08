@@ -29,6 +29,10 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.samples.apps.sunflower.databinding.ActivityGardenBinding
 
+import com.microsoft.appcenter.AppCenter
+import com.microsoft.appcenter.analytics.Analytics
+import com.microsoft.appcenter.crashes.Crashes
+
 class GardenActivity : AppCompatActivity() {
 
     private lateinit var drawerLayout: DrawerLayout
@@ -37,6 +41,8 @@ class GardenActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        AppCenter.start(application, "7b10e63b-7d6c-467a-a43e-a36da7f49c0e", Analytics::class.java, Crashes::class.java)
 
         val binding: ActivityGardenBinding = DataBindingUtil.setContentView(this,
                 R.layout.activity_garden)

@@ -35,11 +35,25 @@ import com.google.samples.apps.sunflower.utilities.getToolbarNavigationContentDe
 import org.junit.Assert.assertEquals
 import org.junit.Rule
 import org.junit.Test
+import org.junit.After
+import com.microsoft.appcenter.espresso.Factory
+import com.microsoft.appcenter.espresso.ReportHelper
+import android.R.attr.label
+
+
 
 class GardenActivityTest {
 
     @Rule @JvmField
+    var reportHelper = Factory.getReportHelper()!!
+
+    @Rule @JvmField
     var activityTestRule = ActivityTestRule(GardenActivity::class.java)
+
+    @After
+    fun tearDown() {
+        reportHelper.label("Stopping App")
+    }
 
     @Test fun clickOnAndroidHomeIcon_OpensAndClosesNavigation() {
         // Check that drawer is closed at startup
